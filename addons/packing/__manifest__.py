@@ -1,0 +1,18 @@
+{
+    'name': "АСАИ – Тестовое задание – Упаковка",
+    "version": "18.0.1.1",
+    "license": "LGPL-3",
+    "author": "Dmitriy",
+    "category": "Manufacturing",
+    "summary": "Система управления упаковкой",
+    "description": "Модуль для управления заказами на упаковку и деталями",
+    'data': [
+        'security/ir.model.access.csv',
+        'views/packing_detail_views.xml',
+        'views/packing_order_views.xml',
+        'views/packing_order_menus.xml',
+        'views/import_csv_wizard_views.xml',
+    ],
+    "installable": True,
+    "application": True,
+}

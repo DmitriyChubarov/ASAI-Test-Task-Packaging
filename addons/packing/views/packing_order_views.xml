@@ -1,0 +1,68 @@
+<odoo>
+    <record id="view_packing_order_form" model="ir.ui.view">
+        <field name="name">packing.order.form</field>
+        <field name="model">packing.order</field>
+        <field name="arch" type="xml">
+            <form string="Packing Order">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="operator_name"/>
+                        <field name="state"/>
+                        <field name="rejection_reason"/>
+                    </group>
+                    <notebook>
+                        <page string="Детали для упаковки">
+                            <field name="detail"
+                                    widget="many2many"
+                                    readonly="1"
+                                    options="{'no_create': True, 'no_open': True}"
+                                    context="{'order_id': id}">
+                                <list create="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="weight"/>
+                                    <button string="Упаковать" type="object" name="action_pack_for_order" icon="fa-check" invisible="parent.state != 'in_progress'"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Упакованные детали">
+                            <field name="packed_detail" widget="many2many" readonly="1" options="{'no_create': True, 'no_open': True}">
+                                <list create="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="weight"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div class="oe_button_box" name="button_box">
+                        <button string="Начать упаковку" type="object" name="action_start_packing"
+                                invisible="state != 'draft'" class="oe_stat_button" icon="fa-play"/>
+                        <button string="Невозможно продолжить" type="object" name="action_reject_order"
+                                invisible="state != 'in_progress'" class="oe_stat_button" icon="fa-times"/>
+                        <button string="Импорт из CSV" type="object" name="action_import_csv"
+                                class="oe_stat_button" icon="fa-upload"/>
+                        <button string="Скачать транспортную этикетку" 
+                                invisible="state != 'done'"
+                                class="oe_stat_button"
+                                icon="fa-download"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_packing_order_tree" model="ir.ui.view">
+        <field name="name">packing.order.tree</field>
+        <field name="model">packing.order</field>
+        <field name="arch" type="xml">
+            <list string="Packing Orders">
+                <field name="name"/>
+                <field name="operator_name"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+</odoo>

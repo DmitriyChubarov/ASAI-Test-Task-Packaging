@@ -1,0 +1,18 @@
+<odoo>
+    <record id="view_import_csv_wizard_form" model="ir.ui.view">
+        <field name="name">import.csv.wizard.form</field>
+        <field name="model">import.csv.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Импорт CSV">
+                <group>
+                    <field name="filename" readonly="1"/>
+                    <field name="file" filename="filename"/>
+                </group>
+                <footer>
+                    <button string="Импортировать" type="object" name="import_csv" class="btn-primary"/>
+                    <button string="Отмена" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

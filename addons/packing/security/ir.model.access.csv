@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_packing_order,access_packing_order,model_packing_order,base.group_user,1,1,1,1
+access_packing_detail,access_packing_detail,model_packing_detail,base.group_user,1,1,1,1
+access_import_csv_wizard,access_import_csv_wizard,model_import_csv_wizard,base.group_user,1,1,1,1

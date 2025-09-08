@@ -1,0 +1,24 @@
+<odoo>
+    <menuitem id="menu_packing_root" name="Упаковка" sequence="10"/>
+
+    <menuitem id="menu_packing_orders" name="Заказы" parent="menu_packing_root" sequence="10"/>
+    <menuitem id="menu_packing_details" name="Детали" parent="menu_packing_root" sequence="20"/>
+
+    <record id="action_packing_order" model="ir.actions.act_window">
+        <field name="name">Packing Orders</field>
+        <field name="res_model">packing.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_draft': 1}</field>
+    </record>
+
+    <record id="action_packing_detail" model="ir.actions.act_window">
+        <field name="name">Packing Details</field>
+        <field name="res_model">packing.detail</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_packing_order_action" name="Заказы" parent="menu_packing_orders"
+              action="action_packing_order"/>
+    <menuitem id="menu_packing_detail_action" name="Детали" parent="menu_packing_details"
+              action="action_packing_detail"/>
+</odoo>
