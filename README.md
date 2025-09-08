@@ -1,0 +1,37 @@
+# АСАИ – Тестовое задание – Упаковка
+# Модуль для сборки заказов на Odoo
+
+## Реализация
+- 08.09.2025 (скорее easy) - Базовая логика + Загрузка из CSV (ссылка на видео - https://disk.yandex.ru/d/F5m5cAH1UpECvg)
+- В процессе: добавление деталей через QR код и создание транспортной этикетки
+
+### Технологии
+
+- Python 3 / Odoo 18
+- PostgreSQL 
+- Docker, Docker Compose
+
+### Установка и запуск
+
+Открываем терминал, создаём папку, в которой будет располагаться проект и переходим в неё:
+```bash
+mkdir /ваш/путь
+cd /ваш/путь
+```
+Клонируем репозотирий в эту папку, переходим в папку проекта:
+```bash 
+git clone https://github.com/DmitriyChubarov/ASAI-Test-Task-Packaging.git
+cd ASAI-Test-Task-Packaging
+```
+Запускаем Docker на устройстве, после чего запускаем сервис:
+```bash
+docker compose up
+```
+Сервисом можно пользоваться, удачи!
+```bash
+http://localhost:8069
+```
+  
+### Контакты
+- tg: @eeezz_z
+- gh: https://github.com/DmitriyChubarov
