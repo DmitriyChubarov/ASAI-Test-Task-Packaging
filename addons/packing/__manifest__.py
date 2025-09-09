@@ -12,6 +12,8 @@
         'views/packing_order_views.xml',
         'views/packing_order_menus.xml',
         'views/import_csv_wizard_views.xml',
+        'report/label_report.xml',
+        'report/label_template.xml',
     ],
     "installable": True,
     "application": True,

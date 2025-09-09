@@ -44,6 +44,8 @@
                                 invisible="state != 'in_progress'" class="oe_stat_button" icon="fa-times"/>
                         <button string="Импорт из CSV" type="object" name="action_import_csv"
                                 class="oe_stat_button" icon="fa-upload"/>
+                        <button string='Печать транспортной этикетки' type="object" name="action_print_transport_label"
+                                invisible="state != 'done'"/>
                     </div>
                 </sheet>
             </form>

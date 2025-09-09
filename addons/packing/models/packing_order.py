@@ -1,4 +1,7 @@
-from odoo import models, fields
+from odoo import models, fields, api
+import base64
+import qrcode
+from io import BytesIO
 
 class PackingOrder(models.Model):
     _name = 'packing.order'
@@ -38,6 +41,11 @@ class PackingOrder(models.Model):
             'target': 'new',
             'context': {'default_order_id': self.id},
         }
+
+    def action_print_transport_label(self):
+        self.ensure_one()
+        report = self.env.ref('packing.action_transport_label', raise_if_not_found=True)
+        return report.report_action(self)
 
 
 

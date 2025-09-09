@@ -1,0 +1,9 @@
+<odoo>
+  <record id="action_transport_label" model="ir.actions.report">
+    <field name="name">Транспортная этикетка</field>
+    <field name="model">packing.order</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">packing.label_template</field>
+    <field name="print_report_name">'Заказ ' + object.name</field>
+  </record>
+</odoo>

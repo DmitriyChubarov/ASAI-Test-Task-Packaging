@@ -1,0 +1,27 @@
+<odoo>
+  <template id="label_template">
+    <t t-call="web.basic_layout">
+      <main>
+        <div class="page" style="text-align: center; font-family: Arial, sans-serif;">
+          <t t-foreach="docs" t-as="doc">
+            <div style="display: inline-block; border: 1px solid #000; padding: 15px; width: 300px;">
+              <h3 style="margin-bottom: 10px;">Транспортная этикетка</h3>
+              <p><strong>Заказ:</strong> <t t-esc="doc.name"/></p>
+              <p><strong>Оператор:</strong> <t t-esc="doc.operator_name"/></p>
+              <p><strong>Упакованные детали:</strong></p>
+              <ul style="list-style-type: none; padding-left: 0;">
+                <t t-foreach="doc.packed_detail" t-as="detail">
+                  <li><t t-esc="detail.name"/></li>
+                </t>
+              </ul>
+              <div style="width: 250px; height: 80px; margin: 0 auto; text-align: center; padding: 5px;">
+              <t t-esc="doc.name" t-options='{"widget": "barcode", "type": "code128", "width": 250, "height": 80}'/>
+              </div>
+            </div>
+          </t>
+        </div>
+      </main>
+    </t>
+  </template>
+</odoo>
+
